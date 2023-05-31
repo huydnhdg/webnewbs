@@ -1,0 +1,381 @@
+﻿@model IEnumerable<WebNewsBs.Models.Partner>
+
+@{
+    ViewBag.Title = "Bluesea.com.vn - Giải Pháp Số Hóa Cho Doanh Nghiệp";
+    ViewBag.Description = "Bluesea chuyên cung cấp giải pháp số hóa cho doanh nghiệp:  Bảo hành điện tử, nhắn tin tích điểm tặng quà, Hóa đơn điện tử, SMS Brandname, cổng thanh toán Mobile và digital Marketing.";
+    IEnumerable<WebNewsBs.Models.Post> posts = ViewBag.listOld;
+}
+
+
+<!-- BANNER
+================================================== -->
+<div class="main-banner bg-primary top-position position-relative">
+    <div class="container">
+
+        <div class="row">
+
+            <!-- left banner text -->
+            <div class="col-lg-6">
+                <div class="header-text w-md-75 w-lg-100 pb-5 pb-lg-0">
+                    <h1 class="wow fadeInUp text-white mb-4 display-lg-8 w-xl-100" data-wow-delay=".1s" >
+                        Bluesea.com.vn - Giải pháp số hóa cho doanh nghiệp</h1>
+                        <p class="mb-lg-2-0 w-90 w-md-80 opacity9 wow fadeInUp text-white" data-wow-delay=".2s" style="text-align:justify">Công Ty Cổ Phần Công Nghệ Và Truyền Thông Biển Xanh là một trong những đơn vị đầu tiên triển khai giải pháp bảo hành điện tử, cổng thanh toán, hóa đơn điện tử, tích điểm đổi quà, SMS Brandname..v.v.. tại Việt Nam với kinh nghiệm triển khai giải pháp hơn 18 năm.</p>
+                        <div class="wow fadeInUp" data-wow-delay=".4s">
+
+                            <a href="/gioi-thieu" class="butn white me-2 align-middle"><span>Giới thiệu</span></a>
+                            <a href="#!" class="button butn white me-2 align-middle" data-modal="modalOne"><span>Đăng kí hỗ trợ ngay</span></a>
+                            <div id="modalOne" class="modal">
+                                <div class="modal-content">
+                                    <div class="contact-form">
+                                        <a class="close">&times;</a>
+                                        @using (Html.BeginForm("Index", "Customers", FormMethod.Post, new { id = "formmethod", style = " padding: 25px;    margin: 25px;   box-shadow: 0 2px 5px #f5f5f5;   background: #eee;" }))
+                                        {
+                                            <h2 style="text-align:center; color:black">Đăng kí để được hỗ trợ</h2>
+
+                                            <div class="row">
+
+                                                <!-- Begin Text input element -->
+                                                <div class="col-md-6">
+                                                    <div class="quform-element">
+                                                        <label for="last_name">Tên của bạn </label>
+                                                        <div class="quform-input">
+                                                            <input class="form-control" id="last_name" type="text" name="last_name" placeholder="Your name here" required />
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- End Text input element -->
+                                                <!-- Begin Text input element -->
+                                                <div class="col-md-6">
+                                                    <div class="quform-element">
+                                                        <label for="email">Email của bạn </label>
+                                                        <div class="quform-element-text">
+                                                            <input class="form-control" id="email" type="text" name="email" placeholder="Your email here" required />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- End Text input element -->
+                                                <!-- Begin Text input element -->
+                                                <div class="col-md-6">
+                                                    <div class="quform-element">
+                                                        <label for="subject">Công ty</label>
+                                                        <div class="quform-element-text">
+                                                            <input class="form-control" id="company" type="text" name="company" placeholder="Your company here" required />
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <!-- End Text input element -->
+                                                <!-- Begin Text input element -->
+                                                <div class="col-md-6">
+                                                    <div class="quform-element">
+                                                        <label for="subject">SĐT </label>
+                                                        <div class="quform-element-text">
+                                                            <input class="form-control" id="phone" type="text" name="phone" placeholder="Your phone here" required />
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <!-- End Text input element -->
+                                                <!-- Begin Textarea element -->
+                                                <div class="col-md-12">
+                                                    <div class="quform-element">
+                                                        <label for="note">Nội dung</label>
+                                                        <div class="quform-element-textarea">
+                                                            <textarea class="form-control" id="note" name="note" rows="3" placeholder="Tell us a few words" required></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <div class="quform-submit-inner">
+                                                        <button id="btnsubmit" class="butn" type="submit"><span>Send Message</span></button>
+                                                    </div>
+                                                    <div class="quform-loading-wrap text-start"><span class="quform-loading"></span></div>
+                                                </div>
+                                                <!-- End Submit button -->
+
+                                            </div>
+
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="popup-youtube" href="https://www.youtube.com/watch?v=dIngYpEL97E">
+                                <span class="btn-play-theme video_btn align-middle"><i class="fa fa-play"></i></span>
+                            </a>
+
+                        </div>
+
+</div>
+            </div>
+            <!-- end banner text -->
+            <!-- right image banner -->
+            <div class="col-lg-6 text-center text-lg-end position-relative">
+                <div class="banner-img">
+                    <img src="~/img/banner/bluesea2.jpg" alt="..." >
+                </div>
+            </div>
+            <!-- end right image banner -->
+
+        </div>
+
+    </div>
+    <div class="position-absolute top-0 start-0">
+        <img src="~/img/bg/bg-07.png" alt="...">
+    </div>
+    <div class="position-absolute top-0 end-0">
+        <img src="~/img/bg/bg-08.png" alt="...">
+    </div>
+    <div class="home_bubble">
+        <div class="square-shape2"></div>
+        <div class="bubble b_three"></div>
+        <div class="square-shape1 d-none d-sm-block"></div>
+        <div class="bubble b_six d-none d-sm-block"></div>
+    </div>
+
+    <!-- shape area -->
+    <div class="header-shape d-none d-sm-block">
+        <img src="~/img/bg/bg-04.png" class="img-fluid w-100" alt="...">
+    </div>
+    <!-- end shape area -->
+
+</div>
+
+
+<section>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12 order-2 order-lg-1 wow fadeInLeft" data-wow-delay=".1s" style="text-align:justify">
+                <div class="pe-lg-1-9">
+                    <h2 class="h1 font-weight-700 mb-1-6">Tại sao nên chọn chúng tôi?</h2>
+                    <p class="mb-1-6"></p>
+                    <div class="media mb-1-9">
+                        <div class="icon-box light-pink">
+                            <i class="ti-time"></i>
+                        </div>
+                        <div class="media-body ms-3 ms-lg-4">
+                            <h4 class="h5">Giải pháp tổng thể cho doanh nghiệp</h4>
+                            <p class="mb-0">Cung cấp giải pháp tổng thể cho doanh nghiệp với 7 giải pháp chính: Bảo hành điện tử, Cổng thanh toán Mobile, Hóa đơn điện tử, SMS Brandname, Thiết kế Website, Nhắn tin tích điểm và Digital Marketing</p>
+                        </div>
+                    </div>
+                    <div class="media mb-1-9">
+                        <div class="icon-box blue">
+                            <i class="ti-user"></i>
+                        </div>
+                        <div class="media-body ms-3 ms-lg-4">
+                            <h4 class="h5">Uy tín đã được khẳng định</h4>
+                            <p class="mb-0">Uy tín đã được khẳng định với 17 năm kinh nghiệm trong lĩnh vực nội dung số và hiện là một trong những nhà cung cấp nội dung số hàng đầu tại Việt Nam</p>
+                        </div>
+                    </div>
+                    <div class="media mb-1-9">
+                        <div class="icon-box purple">
+                            <i class="ti-desktop"></i>
+                        </div>
+                        <div class="media-body ms-3 ms-lg-4">
+                            <h4 class="h5">Đối tác chiến lược của 5 nhà mạng lớn</h4>
+                            <p class="mb-0">Đối tác chiến lược lâu dài, bền vững với 5 nhà mạng là Mobifone, Vinaphone, Viettel, Vietnammobile và G-mobile</p>
+                        </div>
+                    </div>
+                    <div class="media">
+                        <div class="icon-box yellow">
+                            <i class="ti-headphone-alt"></i>
+                        </div>
+                        <div class="media-body ms-3 ms-lg-4">
+                            <h4 class="h5">Đội ngũ kĩ thuật chuyên nghiệp</h4>
+                            <p class="mb-0">Đội ngũ kỹ thuật chuyên nghiệp được đào tạo bài bản có nhiều kinh nghiệm trong việc kết nối hệ thống, hỗ trợ khách hàng 24/7</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-6 col-md-12 order-1 order-lg-2 mb-1-9 mb-md-2-5 mb-lg-0 wow fadeInRight" data-wow-delay=".2s">
+                <div class="row g-3">
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <img class="rounded" src="~/img/content/about1.jpg" alt="...">
+                        </div>
+                        <div>
+                            <img class="rounded" src="~/img/content/about2.jpg" alt="...">
+                        </div>
+                    </div>
+                    <div class="col-6 mt-6">
+                        <div class="mb-3">
+                            <img class="rounded" src="~/img/content/about3.jpg" alt="...">
+                        </div>
+                        <div>
+                            <img class="rounded" src="~/img/content/about4.jpg" alt="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="section-heading mb-2-3 wow fadeInDown" data-wow-delay=".2s">
+            <h6 class="text-secondary"><span>Dịch vụ</span></h6>
+            <h2 class="mb-0 h1">Các dịch vụ của chúng tôi</h2>
+        </div>
+        <div class="row" >
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                <div class="card card-style1 border-none h-100">
+                    <div class="card-body p-1-9 media">
+                        <div class="icon-box light-pink">
+                            <i class="ti-pie-chart"></i>
+                        </div>
+                        <div class="media-body ms-4">
+                            <h4 class="h5"><a href="/dich-vu/bao-hanh-dien-tu">Bảo hành điện tử</a></h4>
+                            <p class="mb-0" style="text-align:justify">Đơn vị đầu tiên tại Việt Nam cung cấp giải pháp bảo hành điện tử đa nền tảng: SMS 8077, Website và App Mobile</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                <div class="card card-style1 border-none h-100">
+                    <div class="card-body p-1-9 media">
+                        <div class="icon-box dark-pink">
+                            <i class="ti-stats-up"></i>
+                        </div>
+                        <div class="media-body ms-4">
+                            <h4 class="h5"><a href="/dich-vu/tich-diem-doi-qua">Tích diểm đổi quà</a></h4>
+                            <p class="mb-0" style="text-align:justify">Giải pháp tri ân và giữ chân khách hàng trung thành dành cho nhãn hàng: Cho phép khách hàng nhắn tin gửi mã cào được dán trên sản phẩm để tham gia chương trình tích điểm – đổi quà. Với mỗi số điểm nhất định sẽ nhận được những phần quà tương ứng từ nhãn hàng.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".8s">
+                <div class="card card-style1 border-none h-100">
+                    <div class="card-body p-1-9 media">
+                        <div class="icon-box yellow">
+                            <i class="ti-target"></i>
+                        </div>
+                        <div class="media-body ms-4">
+                            <h4 class="h5"><a href="/dich-vu/digital-marketing">Nhắn tin trúng thưởng</a></h4>
+                            <p class="mb-0" style="text-align:justify">Giải pháp thực hiện chương trình khuyến mãi trực tuyến dành cho nhãn hàng: Cho phép khách hàng nhắn tin hoặc quét QR code để tham gia chương trình ngay hoặc tham gia vòng quay may mắn để có cơ hội trúng các giải thưởng có giá trị.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".6s">
+                <div class="card card-style1 border-none h-100">
+                    <div class="card-body p-1-9 media">
+                        <div class="icon-box light-blue">
+                            <i class="ti-blackboard"></i>
+                        </div>
+                        <div class="media-body ms-4">
+                            <h4 class="h5"><a href="/dich-vu/cong-thanh-toan">Cổng thanh toán Game online</a></h4>
+                            <p class="mb-0" style="text-align:justify">Giải pháp cung cấp kênh thanh toán game qua đầu số ngắn 9029. Kết nối nhanh – thanh toán sớm.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="1s">
+                <div class="card card-style1 border-none h-100">
+                    <div class="card-body p-1-9 media">
+                        <div class="icon-box blue">
+                            <i class="ti-announcement"></i>
+                        </div>
+                        <div class="media-body ms-4">
+                            <h4 class="h5"><a href="/dich-vu/hoa-don-dien-tu">Topup</a></h4>
+                            <p class="mb-0" style="text-align:justify">Giải pháp cộng tiền trực tiếp vào tài khoản điện thoại của khách hàng trúng thưởng khi tham gia chương trình khuyến mãi của nhãn hàng.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="1.2s">
+                <div class="card card-style1 border-none h-100">
+                    <div class="card-body p-1-9 media">
+                        <div class="icon-box purple">
+                            <i class="ti-panel"></i>
+                        </div>
+                        <div class="media-body ms-4">
+                            <h4 class="h5">
+                                <a href="/dich-vu/sms-brandname">BrandName</a>
+                            </h4>
+                            <p class="mb-0" style="text-align:justify">Tin nhắn thương hiệu, dịch vụ gửi tin nhắn hàng loạt, giúp doanh nghiệp gửi tin nhắn quảng cáo, gửi tin nhắn chăm sóc khách hàng.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="container">
+        <div class="section-heading mb-2-3 mb-lg-2-9 wow fadeInDown" data-wow-delay=".2s">
+            <h6 class="text-secondary"><span>Tin nổi bật</span></h6>
+            <h2 class="mb-0 h1">Tin tức</h2>
+        </div>
+        <div class="row">
+            @foreach (var item in posts)
+            {
+                <div class="col-md-6 col-lg-4 mb-1-6 mb-md-1-9 mb-lg-0 wow fadeInUp" data-wow-delay=".2s">
+                    <article class="card card-style2 border-none h-100">
+                        <div class="card-img">
+                            <img src="@item.thumbnail" alt="...">
+                        </div>
+                        <div class="blog-info-tag">
+                            <div class="text-end"><a href="#!" class="bg-light-pink">@item.Category_Post.type_post</a></div>
+                        </div>
+                        <div class="card-body">
+                            <small class="font-weight-500">@item.create_date.Value</small>
+                            <h3 class="h4 mt-2 mb-3" style="text-align:justify"><a href="/tin-tuc/@item.alt">@item.title</a></h3>
+                            <p class="mb-3" style="text-align:justify">@item.description</p>
+                            <div class="blog-author">
+                                <div class="blog-author-img">
+                                </div> <span class="text-light-pink">@item.createby</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            }
+
+        </div>
+    </div>
+    <br />
+    <div class="container">
+        <div class="section-heading mb-2-3 mb-lg-2-9 wow fadeInDown" data-wow-delay=".1s">
+            <h6 class="text-secondary"><span>Đối tác</span></h6>
+            <h2 class="mb-0 h1">Đối tác chiến lược</h2>
+        </div>
+
+            <div class="testimonial-carousel owl-carousel owl-theme wow fadeInUp  " data-wow-delay=".1s">
+
+                @foreach (var item in Model)
+                {
+                    <div class="testimonial-wrapper pink ">
+                        <div class="testimonial-image">
+                            <img src="@item.thumbnail" alt="...">
+                        </div>
+                        <p class="mb-3"style="text-align:justify">@item.description</p>
+                        <h4 class="h5 mb-1" >@item.title</h4>
+                        <p class="mb-0">@item.partner_name</p>
+                    </div>
+
+
+                }
+
+
+
+            </div>
+
+
+    </div>
+</section>
+<script>
+    $(document).ready(function () {
+        $("#btnsubmit").click(function (e) {
+            //Serialize the form datas.
+            var valdata = $("#formmethod").serialize();
+            //to get alert popup
+            $.ajax({
+                url: "/Customers/Index",
+                type: "POST",
+                dataType: 'json',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: valdata
+            });
+        });
+    });
+</script>

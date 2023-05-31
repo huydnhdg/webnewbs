@@ -1,0 +1,66 @@
+﻿@model IEnumerable<WebNewsBs.Models.Advertise>
+@{
+    ViewBag.Title = "Đối tác";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="page-title-section top-position bg-primary" style="padding:0px 0px 80px">
+    @*<div class="container z-index-1 position-relative">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h1>Đối tác</h1>
+                </div>
+                <div class="col-md-12">
+                    <ul class="mb-0 ps-0">
+                        <li><a href="/">Trang chủ</a></li>
+                        <li><a class="dot-divider"></a></li>
+                        <li><a href="#!">Đối tác</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <img src="~/img/banner/page-title2.png" class="position-absolute top-0 start-0" alt="...">
+        <img src="~/img/banner/page-title1.png" class="position-absolute bottom-0 end-0" alt="...">
+        <div class="home_bubble">
+            <div class="square-shape2"></div>
+            <div class="bubble b_three"></div>
+            <div class="square-shape1 d-none d-sm-block"></div>
+            <div class="bubble b_six d-none d-sm-block"></div>
+        </div>*@
+</section>
+
+
+<section style="padding:0px">
+    <div class="mb-1-6 mb-md-1-9">
+        <img style="width:100%; height:30%" src="~/img/banner/z3961627563314_af7938aa2f462f58446143f1431e715a.jpg" alt="...">
+
+
+    </div>
+    <div class="container">
+
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6 mb-1-6 mb-md-1-9 wow fadeInUp">
+                    <div class="case-study-wrapper">
+                        <a class="mb-0" href="@item.link">
+                            <img class="rounded" src="../@item.image" alt="...">
+                        </a>
+                        <div class="case-study-content">
+                            <div class="case-study-inner-content">
+                                <h4 class="h5 mb-1 mb-xl-2"><a href="@item.link" class="text-dark">@item.title</a></h4>
+                                <a href="@item.link" class=" mb-1 mb-xl-2 text-blue"><span>@item.title</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+</section>
+<br />
+<br />
+<br />
+<br />
+<br />

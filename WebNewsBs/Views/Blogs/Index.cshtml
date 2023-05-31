@@ -1,0 +1,150 @@
+﻿
+@model PagedList.IPagedList<WebNewsBs.Models.Post>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Tin tức";
+    IEnumerable<WebNewsBs.Models.Post> newlist = ViewBag.newslist;
+    IEnumerable<WebNewsBs.Models.Category_Post> newlist1 = ViewBag.listcate;
+
+}
+<section class="page-title-section top-position bg-primary">
+    <div class="container z-index-1 position-relative">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h1>Tin tức</h1>
+            </div>
+            <div class="col-md-12">
+                <ul class="mb-0 ps-0">
+                    <li><a href="/">Trang chủ</a></li>
+                    <li><a class="dot-divider"></a></li>
+                    <li><a href="#!">Tin tức</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <img src="~/img/banner/page-title2.png" class="position-absolute top-0 start-0" alt="...">
+    <img src="~/img/banner/page-title1.png" class="position-absolute bottom-0 end-0" alt="...">
+    <div class="home_bubble">
+        <div class="square-shape2"></div>
+        <div class="bubble b_three"></div>
+        <div class="square-shape1 d-none d-sm-block"></div>
+        <div class="bubble b_six d-none d-sm-block"></div>
+    </div>
+</section>
+
+<!-- BLOG
+================================================== -->
+<section class="blog-list">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12 mb-6 mb-lg-0">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-12 mb-1-6 mb-md-1-9">
+                        <article class="card card-style2 border-none" id="records_table" >
+                            <div class="card-img">
+                                <a href="/tin-tuc/@item.alt"><img src="@item.thumbnail" alt="..."></a>
+                            </div>
+                            <div class="blog-info-tag">
+                                <div class="text-end"><a href="#!" class="bg-light-pink">@item.Category_Post.type_post</a></div>
+                            </div>
+                            <div class="card-body">
+                                <small class="font-weight-500">@item.create_date</small>
+                                <h3 class="h4 mt-2 mb-3" style="text-align:justify"> <a href="/tin-tuc/@item.alt"> @item.title</a></h3>
+                                <p class="mb-3" style="text-align:justify">@item.description</p>
+                                <div class="blog-author">
+                                    <div class="blog-author-img">
+
+                                    </div> <span class="text-light-pink">@item.createby</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                }
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- start pager  -->
+                        <div class="text-center mt-6 mt-lg-7">
+                            <div class="pagination text-extra-dark-gray">
+                                <ul>
+                                    <br />
+                                    @*Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount*@
+
+                                    @Html.PagedListPager(Model, page => Url.Action("Index",
+                                        new { page }))
+
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- end pager -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="ps-lg-1-6 ps-xl-1-9">
+                    <div class="side-bar">
+                        <div class="widget">
+                            <h6 class="widget-title">Tìm kiếm theo tên bài viết</h6>
+                            @using (Html.BeginForm("Index", "Blogs", FormMethod.Get))
+                            {
+
+                                <div class="quform-element-text">
+                                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control", placeholder = "Tìm kiếm theo SĐT ..." })
+
+                                </div>
+                                <br />
+                                <div class="col-md-12">
+                                    <div class="quform-submit-inner">
+                                        <button id="btnsubmit" class="butn" type="submit"><span>Tìm kiếm</span></button>
+                                    </div>
+                                    <div class="quform-loading-wrap text-start"><span class="quform-loading"></span></div>
+                                </div>
+                            }
+                        </div>
+                        <div class="widget">
+                            <h6 class="widget-title">Tổng bài viết theo từng mục</h6>
+                            @foreach (var item1 in newlist1)
+                            {
+                                <ul class="cat-list">
+                                    <li>
+                                        <a href="#!"><i class="fas fa-angle-right"></i>@item1.type_post<span>@item1.Posts.Count()</span></a>
+                                        <hr />
+                                    </li>
+                                </ul>
+                            }
+
+                        </div>
+                        <div class="widget">
+                            <h6 class="widget-title">Bài viết nổi bật</h6>
+                            @foreach (var item in newlist)
+                            {
+
+                                <div class="media mb-3 border-bottom pb-3 border-color-extra-light-gray">
+                                    <img class="me-3 border-radius-4" width="50px" src="@item.thumbnail" alt="...">
+                                    <div class="media-body align-self-center">
+                                        <h4 class="h6 mb-1"><a href="/tin-tuc/@item.alt"> @item.title</a></h4>
+                                        <a href="#!" class="small"><i class="far fa-calendar-check me-2"></i>@item.create_date</a>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <div class="widget">
+                            <h6 class="widget-title">Các tag nổi bật</h6>
+                            @foreach (var item in newlist)
+                            {
+                                <ul class="blog-tags ps-0">
+                                    <li><a href="/tin-tuc/@item.alt"> @item.tag</a></li>
+                                </ul>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end blog right -->
+        </div>
+
+    </div>
+</section>

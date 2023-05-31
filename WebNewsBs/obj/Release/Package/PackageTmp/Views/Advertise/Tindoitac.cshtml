@@ -1,0 +1,86 @@
+﻿
+@model PagedList.IPagedList<WebNewsBs.Models.Post>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Tindoitac";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="page-title-section top-position bg-primary">
+    <div class="container z-index-1 position-relative">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h1>Tin đối tác</h1>
+            </div>
+            <div class="col-md-12">
+                <ul class="mb-0 ps-0">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="dot-divider"></a></li>
+                    <li><a href="#!">Tin tức</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <img src="img/banner/page-title2.png" class="position-absolute top-0 start-0" alt="...">
+    <img src="img/banner/page-title1.png" class="position-absolute bottom-0 end-0" alt="...">
+    <div class="home_bubble">
+        <div class="square-shape2"></div>
+        <div class="bubble b_three"></div>
+        <div class="square-shape1 d-none d-sm-block"></div>
+        <div class="bubble b_six d-none d-sm-block"></div>
+    </div>
+</section>
+
+<!-- BLOG
+================================================== -->
+<section class="blog-grid">
+    <div class="container">
+        <div class="section-heading mb-2-3 mb-lg-2-9 wow fadeInDown" data-wow-delay=".2s">
+            <h6 class="text-secondary"><span>Tin tức</span></h6>
+            <h2 class="mb-0 h1">Tổng hợp tin các dối tác</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-1-6 mb-md-1-9 mb-lg-2-5">
+                @foreach (var item in Model)
+                {
+                    <article class="card card-style2 border-none h-100">
+                        <div class="card-img">
+                           <a href="/tin-tuc/@item.alt"><img src="@item.thumbnail" alt="..."></a> 
+                        </div>
+                        <div class="blog-info-tag">
+                            <div class="text-end"><a  class="bg-light-pink">@item.Category_Post.type_post</a></div>
+                        </div>
+                        <div class="card-body">
+                            <small class="font-weight-500">@item.create_date</small>
+                            <h3 class="h4 mt-2 mb-3"><a href="/tin-tuc/@item.alt">@item.title</a></h3>
+                            <p class="mb-3">@item.description</p>
+                            <div class="blog-author">
+                                 <span class="text-light-pink">@item.createby</span>
+                            </div>
+                        </div>
+                    </article>
+
+                }
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <!-- start pager  -->
+                <div class="text-center mt-6 mt-lg-7">
+                    <div class="pagination text-extra-dark-gray">
+                        <ul>
+                            <br />
+                            @*Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount*@
+
+                            @Html.PagedListPager(Model, page => Url.Action("Index",
+                                new { page }))
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- end pager -->
+            </div>
+        </div>
+    </div>
+</section>

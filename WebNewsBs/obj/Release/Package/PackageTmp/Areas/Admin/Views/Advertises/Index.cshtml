@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WebNewsBs.Models.Advertise>
+
+@{
+    ViewBag.Title = "Index";
+
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">DataTable with default features</h3>
+    </div>
+
+    <table id="example1" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Tên </th>
+                <th>Ảnh </th>
+                <th>Link</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.title</td>
+                    <td>
+                        <img width="100" src="@item.image" />
+                    </td>
+                    <td>@item.link</td>
+                    <td>
+                        <a class="btn" href="/admin/advertises/edit/@item.id"><i class="fa fa-edit fa-fw"></i></a>
+                        <a class="btn" href="/admin/advertises/delete/@item.id"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

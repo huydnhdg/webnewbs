@@ -1,0 +1,60 @@
+﻿@model WebNewsBs.Models.Partner
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="content-header">
+    <div class="container-fluid">
+
+        <h3>Are you sure you want to delete this?</h3>
+        <div>
+            <h4>Partner</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.partner_name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.partner_name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.title)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.title)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.thumbnail)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.thumbnail)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.description)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.description)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,249 @@
+﻿@model WebNewsBs.Models.Customer
+@{
+    ViewBag.Title = "Liên hệ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- PAGE TITLE
+================================================== -->
+<section class="page-title-section top-position bg-primary">
+    <div class="container z-index-1 position-relative">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h1>Liên hệ</h1>
+            </div>
+            <div class="col-md-12">
+                <ul class="mb-0 ps-0">
+                    <li><a href="/">Trang chủ</a></li>
+                    <li><a class="dot-divider"></a></li>
+                    <li><a href="#!">Liên hệ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <img src="~/img/banner/page-title2.png" class="position-absolute top-0 start-0" alt="...">
+    <img src="~/img/banner/page-title1.png" class="position-absolute bottom-0 end-0" alt="...">
+    <div class="home_bubble">
+        <div class="square-shape2"></div>
+        <div class="bubble b_three"></div>
+        <div class="square-shape1 d-none d-sm-block"></div>
+        <div class="bubble b_six d-none d-sm-block"></div>
+    </div>
+</section>
+
+<!-- CONTACT INFO
+================================================== -->
+<section class="pb-0">
+    <div class="container">
+        <div class="section-heading mb-2-3 mb-lg-2-9 wow fadeInDown" data-wow-delay=".2s">
+            <h6 class="text-secondary"><span>Liên lạc</span></h6>
+            <h2 class="mb-0 h1">Sẵn sàng để bắt đầu?</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-12 mb-1-6 mb-md-1-9 mb-lg-0 wow fadeInUp" data-wow-delay=".2s">
+                <div class="bg-blue-opacity text-center p-1-9 rounded h-100">
+                    <i class="fas fa-map-marker-alt text-blue display-22 display-sm-20 display-md-18 display-lg-17 display-xl-14 mb-3"></i>
+                    <h3 class="h5 mb-2 mb-sm-3">Địa chỉ công ty</h3>
+                    <span class="d-block mb-1 font-weight-500">91 đường Trung Kính</span>
+                    <span class="font-weight-500">Trung Hòa, Cầu Giấy, Hà Nội</span>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 mb-1-6 mb-md-1-9 mb-lg-0 wow fadeInUp" data-wow-delay=".4s">
+                <div class="bg-pink-opacity text-center p-1-9 rounded h-100">
+                    <i class="far fa-clock text-pink display-22 display-sm-20 display-md-18 display-lg-17 display-xl-14 mb-3"></i>
+                    <h3 class="h5 mb-2 mb-sm-3">Thời gian làm việc</h3>
+                    <span class="d-block mb-1 font-weight-500">Monday - Friday</span>
+                    <span class="d-block mb-1 font-weight-500">08:00am - 05:30pm</span>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay=".6s">
+                <div class="bg-purple-opacity text-center p-1-9 rounded h-100">
+                    <i class="fas fa-mobile-alt text-purple display-22 display-sm-20 display-md-18 display-lg-17 display-xl-14 mb-3"></i>
+                    <h3 class="h5 mb-2 mb-sm-3">Thông tin liên hệ</h3>
+                    <span class="d-block mb-1 font-weight-500">xuanhung@bluesea.vn</span>
+                    <span class="font-weight-500">0945152826</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MAP
+================================================== -->
+<section>
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-lg-12">
+                <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.4763377985996!2d105.79604361570965!3d21.01361829366914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab58be26cab7%3A0x884c246a9e5e190e!2zOTEgUC4gVHJ1bmcgS2nMgW5oLCBUcnVuZyBIb8OgLCBD4bqndSBHaeG6pXksIEjDoCBO4buZaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1669013016404!5m2!1svi!2s" width="1100" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT FORM
+================================================== -->
+<section class="pt-0 overflow-visible">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-4 d-none d-lg-block">
+                <div class="pr-lg-1-6">
+                    <figure class="mb-0">
+                        <img src="~/img/content/z3958534113565_09f2dda23f88bb29d8430979fb789695.jpg" alt="...">
+                    </figure>
+                </div>
+
+            </div>
+            <div class="col-lg-8">
+                <div class="contact-wrapper">
+                    <h3 class="h4 mb-1-6">Gửi chúng tôi vài dòng</h3>
+                    @using (Html.BeginForm("Index", "Customers", FormMethod.Post, new { id = "formmethod" }))
+                    { 
+                <div class="row">
+
+                    <!-- Begin Text input element -->
+                    <div class="col-md-6">
+                        <div class="quform-element">
+                            <label for="last_name">Tên của bạn <span class="quform-required">*</span></label>
+                            <div class="quform-input">
+                                <input class="form-control" id="last_name" type="text" name="last_name" placeholder="Your name here" required />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="quform-element">
+                            <label for="email">Công ty<span class="quform-required">*</span></label>
+                            <div class="quform-element-text">
+                                <input class="form-control" id="company" type="text" name="company" placeholder="Your address here" required />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Text input element -->
+                    <!-- Begin Text input element -->
+                    <div class="col-md-6">
+                        <div class="quform-element">
+                            <label for="email">Email của bạn <span class="quform-required">*</span></label>
+                            <div class="quform-element-text">
+                                <input class="form-control" id="email" type="text" name="email" placeholder="Your email here" required />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Text input element -->
+                    <!-- Begin Text input element -->
+                    <!-- End Text input element -->
+                    <!-- Begin Text input element -->
+                    <div class="col-md-6">
+                        <div class="quform-element">
+                            <label for="subject">SĐT <span class="quform-required">*</span></label>
+                            <div class="quform-element-text">
+                                <input class="form-control" id="phone" type="text" name="phone" placeholder="Your phone here" required />
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- End Text input element -->
+                    <!-- Begin Textarea element -->
+                    <div class="col-md-12">
+                        <div class="quform-element">
+                            <label for="note">Nội dung<span class="quform-required">*</span></label>
+                            <div class="quform-element-textarea">
+                                <textarea class="form-control" id="note" name="note" rows="3" placeholder="Tell us a few words" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Textarea element -->
+                    <!-- Begin Captcha element -->
+                    @*<div class="col-md-12">
+            <div class="quform-element">
+                <div class="form-group">
+                    <div class="quform-input">
+                        <input class="form-control" id="type_the_word" type="text" name="type_the_word" placeholder="Nhập mã bên dưới" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="quform-captcha">
+                        <div class="quform-captcha-inner">
+                            <img src="~/quform/images/captcha/courier-new-light.png" alt="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+                    <!-- End Captcha element -->
+                    <!-- Begin Submit button -->
+                    <div class="col-md-12">
+                        <div class="quform-submit-inner">
+                            <button id="btnsubmit" class="butn" type="submit"><span>Send Message</span></button>
+                        </div>
+                        <div class="quform-loading-wrap text-start"><span class="quform-loading"></span></div>
+                    </div>
+                    <!-- End Submit button -->
+
+                </div>
+
+
+
+               }
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+        $(document).ready(function () {
+            $("#btnsubmit").click(function (e) {
+                //Serialize the form datas.
+                var valdata = $("#formmethod").serialize();
+                //to get alert popup
+
+                $.ajax({
+                    url: "/Customers/Index",
+                    type: "POST",
+                    dataType: 'json',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: valdata
+                });
+            });
+        });
+    </script>
+@*<script>
+    var contact = {
+        init: function () {
+            contact.registerEvent();
+        },
+        registerEvent: function () {
+            $('#btnsubmit').off('click').on('click', function () {
+                var last_name = $('#last_name').val();
+                var phone = $('#phone').val();
+                var email = $('#email').val();
+                var company = $('#company').val();
+                var note = $('#note').val();
+
+                $.ajax({
+                    url: '/Customers/Contact',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        last_name: last_name,
+                        phone: phone,
+                        email: email,
+                        company: company,
+                        note: note
+                    },
+                    success: function (res) {
+                        if (res.status == true) {
+                            window.alert('Yêu cầu của bạn đã được gửi đi.')
+                        } else {
+                            window.alert('Yêu cầu của bạn chưa được gửi đi.')
+                        }
+                    }
+                });
+            });
+        },
+    }
+    contact.init();
+</script>*@

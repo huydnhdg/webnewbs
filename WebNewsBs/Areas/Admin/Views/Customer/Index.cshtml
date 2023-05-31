@@ -1,0 +1,44 @@
+﻿@model IEnumerable<WebNewsBs.Models.Customer>
+@{
+    ViewBag.Title = "Khách hàng";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h1 class="card-title" style="font-weight:bold">Danh sách thông tin liên hệ của khách hàng</h1>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Họ tên khách hàng</th>
+             
+                    <th>Số điện thoại</th>
+                    <th>Email</th>
+                    <th>Công ty</th>
+                    <th>Note</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td> @item.last_name</td>
+              
+                        <td>@item.phone</td>
+                        <td>@item.email</td>
+                        <td>@item.company</td>
+                        <td>@item.note</td>
+                        <td> @Html.ActionLink("Xem chi tiết", "Details", new { id = @item.customer_id })</td>
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+

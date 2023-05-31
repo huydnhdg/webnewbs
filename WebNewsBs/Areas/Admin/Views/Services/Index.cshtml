@@ -1,0 +1,56 @@
+﻿@model IEnumerable<WebNewsBs.Models.Service>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">DataTable with default features</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Tên dịch vụ</th>
+                    <th>Ảnh</th>
+                    <th>Nội dung</th>
+                    <th>#</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.title</td>
+                        <td><img width="100" src="@item.thumbnail" /></td>
+
+                        <td>@item.description</td>
+                        @if (@item.point == false)
+                        {
+                            <td><input value="@item.point" type="checkbox" disabled /></td>
+                        }
+                        else if(item.point == true)
+                                {
+                            <td><input value="@item.point" type="checkbox" checked disabled /></td>
+                        }
+                        else
+                        {
+                            <td>Null</td>
+                        }
+
+                        <td>
+                            <a class="btn" href="/admin/services/edit/@item.service_id"><i class="fa fa-edit fa-fw"></i></a>
+                            <a class="btn" href="/admin/services/delete/@item.service_id"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+

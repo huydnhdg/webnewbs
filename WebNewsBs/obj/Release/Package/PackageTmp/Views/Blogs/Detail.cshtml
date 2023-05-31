@@ -1,0 +1,151 @@
+﻿@model WebNewsBs.Models.Post
+@{
+    ViewBag.Title = Model.title;
+    ViewBag.Description = Model.description;
+
+    IEnumerable<WebNewsBs.Models.Post> posts = ViewBag.listOld;
+}
+
+<!-- PAGE TITLE
+================================================== -->
+<section class="page-title-section top-position bg-primary">
+    <div class="container z-index-1 position-relative">
+        <div class="row text-center">
+            <div class="col-md-12">
+        
+                <h1>@Html.DisplayFor(model=>model.title)</h1>
+            </div>
+            <div class="col-md-12">
+                <ul class="mb-0 ps-0">
+                    <li><a href="/">Trang chủ</a></li>
+                    <li><a class="dot-divider"></a></li>
+                    <li><a href="#!">Chi tiết bài viết</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <img src="~/img/banner/page-title2.png" class="position-absolute top-0 start-0" alt="...">
+    <img src="~/img/banner/page-title1.png" class="position-absolute bottom-0 end-0" alt="...">
+    <div class="home_bubble">
+        <div class="square-shape2"></div>
+        <div class="bubble b_three"></div>
+        <div class="square-shape1 d-none d-sm-block"></div>
+        <div class="bubble b_six d-none d-sm-block"></div>
+    </div>
+</section>
+
+
+<!-- BLOG DETAILS
+================================================== -->
+<section class="blogs">
+    <div class="container">
+        <div class="row">
+            <!-- blog left -->
+            <div class="col-lg-12 col-md-12 mb-1-9 mb-lg-0">
+                <div class="posts-wrapper">
+                    <!-- post -->
+                    <div class="post-content wow fadeInLeft" data-wow-delay=".1s">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 mb-1-9 mb-md-2-5 mb-lg-0">
+                                <img src="@Html.DisplayFor(model=>model.thumbnail)" alt="...">
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="ps-lg-1-9">
+
+                                    <div class="row align-items-center">
+                                        <p class="alt-font font-weight-600 col-lg-12" style="text-align:justify">
+                                            Ngày viết :
+                                            @Html.DisplayFor(model => model.create_date)<br />
+                                            Tác giả :
+                                            @Html.DisplayFor(model => model.createby)<br />
+                                            @Html.DisplayFor(model => model.description)
+                                        </p>
+                                      
+
+
+                                    </div>
+
+                                </div>
+                                </div>
+                        </div>
+                        <hr />
+                        <br />
+                        <div class="mySectionText myBody wow fadeInRight" data-wow-delay=".1s">
+                            @Html.Raw(Model.content)
+
+                        </div>
+
+                        <div class="separator"></div>
+                        <div class="row g-0">
+                            <div class="col-md-6 mb-1-6 mb-md-0">
+                                <div class="tags">
+                                    <h5 class="h6 mb-2">Related Tags</h5>
+                                    <ul class="blog-tags ps-0">
+                                        <li><a href="#!">@Html.DisplayFor(model => model.tag)</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="h6 text-md-end text-start mb-2">Share Post</h5>
+                                <div class="share-post">
+                                    <ul class="mb-0">
+                                        <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="#!"><i class="fab fa-youtube"></i></a></li>
+                                        <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end post -->
+                    <hr>
+                    <div>
+
+                        <div class="fb-comments" data-width="100%" data-numposts="5"></div>
+                    </div>
+                    <div>
+
+                        <div class="fb-like" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                    </div>
+
+                    <!-- end blog right -->
+                </div>
+            </div>
+
+            </div>
+        </div>
+        </section>
+<section class="blog-grid">
+    <div class="container">
+        <div>
+            <h3 class="section-heading mb-2-3 wow fadeInDown" data-wow-delay=".1s">Tin liên quan</h3>
+            <ul class="row">
+                @foreach (var item in posts)
+                {
+                    <div class="col-lg-4 col-md-6 mb-1-6 mb-md-1-9 mb-lg-2-5 wow fadeInDown" data-wow-delay=".1s">
+                        <article class="card card-style2 border-none h-100">
+                            <div class="card-img">
+                                <a href="/tin-tuc/@item.alt"><img src="@item.thumbnail" alt="..."></a>
+                            </div>
+                            <div class="blog-info-tag">
+                                <div class="text-end"><a  class="bg-light-pink">@item.Category_Post.type_post</a></div>
+                            </div>
+                            <div class="card-body">
+                                <small class="font-weight-500">@item.create_date.Value</small>
+                                <h3 class="h4 mt-2 mb-3"> <a href="/tin-tuc/@item.alt"> @item.title</a></h3>
+                                <p class="mb-3">@item.description</p>
+                                <div class="blog-author">
+                                    <div class="blog-author-img">
+                                    </div> <span class="text-light-pink">@item.createby</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                }
+
+            </ul>
+        </div>
+</div>
+</section>

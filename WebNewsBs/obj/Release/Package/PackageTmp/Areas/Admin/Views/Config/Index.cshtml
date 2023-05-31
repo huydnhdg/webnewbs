@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WebNewsBs.Models.Config>
+@{
+    ViewBag.Title = "Config";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h1 class="card-title" style="font-weight:bold">Thông tin cấu hình</h1>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Hotline</th>
+                    <th>FB</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.id</td>
+                        <td>
+                            @item.hotline
+                        </td>
+                        <td>@item.fb</td>
+                        <td>@item.email</td>
+                        <td><a class="btn" href="/admin/config/edit/@item.id"><i class="fa fa-edit fa-fw"></i></a></td>
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+

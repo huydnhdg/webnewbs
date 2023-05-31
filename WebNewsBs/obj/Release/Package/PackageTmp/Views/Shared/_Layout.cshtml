@@ -1,0 +1,349 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- metas -->
+    <meta charset="utf-8">
+    <meta name="author" content="Chitrakoot Web" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="Bảo hành điện tử, nhắn tin tích điểm tặng quà, Hóa đơn điện tử, SMS Brandname, cổng thanh toán Mobile, digital Marketing" />
+    <meta name="description" content="@ViewBag.Description" />
+
+    <!-- title  -->
+    <title>@ViewBag.Title</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="~/img/logos/1446179389_logo-cong-ty.png" />
+    <link rel="apple-touch-icon" href="~/img/logos/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="~/img/logos/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="~/img/logos/apple-touch-icon-114x114.png" />
+
+    <!-- plugins -->
+    <link href="~/css/plugins.css" rel="stylesheet" />
+
+    <!-- search css -->
+    <link rel="stylesheet" href="~/search/search.css">
+
+    <!-- quform css -->
+    <link rel="stylesheet" href="~/quform/css/base.css">
+
+    <!-- theme core css -->
+    <link href="~/css/styles.css" rel="stylesheet">
+    <!-- custom css -->
+    <link href="~/css/custom.css" rel="stylesheet">
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <script src="~/Scripts/jquery-3.6.1.min.js"></script>
+    <link href="~/css/modal.css" rel="stylesheet" />
+    <link href="~/css/form.css" rel="stylesheet" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R7ZSGK1K3J"></script>
+
+</head>
+
+<body>
+
+    <!-- PAGE LOADING
+    ================================================== -->
+    <div id="preloader"></div>
+
+    <!-- MAIN WRAPPER
+    ================================================== -->
+    <div class="main-wrapper">
+
+        <!-- HEADER
+        ================================================== -->
+        <header class="header-style1 menu_area-light">
+
+            <div class="navbar-default">
+
+                <!-- start top search -->
+                <div class="top-search bg-primary">
+                    <div class="container">
+                        <form class="search-form" action="search.html" method="GET" accept-charset="utf-8">
+                            <div class="input-group">
+                                <span class="input-group-addon cursor-pointer">
+                                    <button class="search-form_submit fas fa-search text-white" type="submit"></button>
+                                </span>
+                                <input type="text" class="search-form_input form-control" name="s" autocomplete="off" placeholder="Type & hit enter...">
+                                <span class="input-group-addon close-search mt-1"><i class="fas fa-times"></i></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end top search -->
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-lg-12">
+                            <div class="menu_area">
+                                <nav class="navbar navbar-expand-lg navbar-light p-0">
+
+                                    <div class="navbar-header navbar-header-custom">
+                                        <!-- start logo -->
+
+                                        <a class="navbar-brand" href="/">
+                                            <img src="~/img/logos/1446179389_logo-cong-ty.png" id="logo" alt="logo" />
+                                        </a>
+                                        <!-- end logo -->
+
+                                    </div>
+
+                                    <div class="navbar-toggler"></div>
+
+                                    <!-- menu area -->
+
+                                    <ul class="navbar-nav ms-auto" id="nav" style="display: none;">
+                                        <li> <a href="/">Trang chủ</a></li>
+
+                                        <li> <a href="/gioi-thieu">Giới thiệu</a></li>
+                                        <li>
+
+                                            <a href="#!">Dịch vụ</a>
+
+
+                                            @if (WebNewsBs.Models.GetService.dichvu != null)
+                                            {
+                                                <ul>
+                                                    @foreach (var item in (WebNewsBs.Models.GetService.dichvu))
+                                                    {
+
+                                                        <li><a href="/dich-vu/@item.alt">@item.title</a></li>
+
+                                                    }
+
+                                                </ul>
+                                            }
+
+                                        </li>
+                                        <li>
+                                            <a href="/tin-tuc">Tin tức</a>
+                                        </li>
+                                        <li> <a href="/doi-tac">Đối tác</a></li>
+
+                                        <li><a href="/lien-he">Liên hệ</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        @RenderBody()
+
+        <!-- FOOTER
+        ================================================== -->
+        <footer class="pt-22 pt-md-24 bg-primary footer-style1 position-relative" style="padding-top: 50px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-2-5 mb-lg-0">
+                        <div class="w-80 mb-1-6 mb-lg-1-9">
+                            <a href="/"><img src="~/img/logos/1446179389_logo-cong-ty.png" alt="..."></a>
+                        </div>
+
+                        <p class="text-white" style="text-align:justify ">
+                            Địa chỉ liên hệ : <br />
+
+                            Trụ sở chính: 91 Trung Kính - Trung Hòa - Cầu Giấy - Hà Nội
+                            <br />
+
+                            Điện thoại: 043.767.2210 hoặc 082.749.6688
+                            <br />
+                            <br />
+                            Chi nhánh: 205B Hoàng Hoa Thám - P6 - Quận Bình Thạnh - TP. HCM
+                            <br />
+                            Điện thoại: 083.515.8577 hoặc 083.550.0422
+                        </p>
+                        <ul class="footer-social-icon ps-0 mb-0">
+                            <li><a href="https://www.facebook.com/BlueseaMedia"><i class="fab fa-facebook-f"></i></a></li>
+
+                            <li><a href="https://www.youtube.com/channel/UCK5zfRoZOSG6s4TnIfylBHg"><i class="fab fa-youtube"></i></a></li>
+
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-2-5 mb-lg-0">
+                        <div class="ps-lg-2-5">
+                            <h3 class="footer-title">Menu</h3>
+                            <ul class="footer-list ps-0 mb-0">
+                                <li>@Html.ActionLink("Giới thiệu", "About", "Home")</li>
+                                <li>@Html.ActionLink("Tin tức", "Index", "Blogs")</li>
+
+                                <li>@Html.ActionLink("Đối tác", "Index", "Advertise")</li>
+                                <li>@Html.ActionLink("Liên hệ", "Contact", "Home")</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-2-5 mb-md-0">
+                        <div>
+                            <h3 class="footer-title">Dịch vụ</h3>
+                            <ul class="footer-list ps-0 mb-0">
+                                @if (WebNewsBs.Models.GetService.dichvu != null)
+                                {
+                                    foreach (var item in (WebNewsBs.Models.GetService.dichvu))
+                                    {
+
+                                        <li><a href="/dich-vu/@item.alt">@item.title</a></li>
+
+                                    }
+                                }
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div>
+                            <h3 class="footer-title">Liên hệ ngay</h3>
+                            <p class="alt-font text-white">Hãy liên hệ ngay đến chúng tôi</p>
+                            @using (Html.BeginForm("Index", "Customers", FormMethod.Post, new { id = "formmethod1" }))
+                            {
+                                <div class="row">
+
+                                    <!-- Begin Text input element -->
+                                    <div class="col-md-12">
+                                        <div class="quform-element">
+                                            <label for="phone" class="text-white">Số Điện Thoại</label>
+                                            <div class="quform-element-text">
+                                                <input class="form-control" id="phone" type="text" name="phone" placeholder="Your phone here" required />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="quform-element">
+                                            <label for="note" class="text-white">Nội dung</label>
+                                            <div class="quform-element-textarea">
+                                                <textarea class="form-control" id="note" name="note" rows="3" placeholder="Tell us a few words" required></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Text input element -->
+                                    <!-- Begin Submit button -->
+                                    <div class="col-md-12">
+                                        <div class="quform-submit-inline">
+                                            <button id="btnsubmit1" class="butn btn-close-white" type="submit"><span>Send Message</span></button>
+                                        </div>
+                                        <div class="quform-loading-wrap text-start"><span class="quform-loading"></span></div>
+                                    </div>
+                                    <!-- End Submit button -->
+
+                                </div>
+
+
+
+                            }
+
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bar border-top border-color-light-white">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <p class="mb-0 text-white"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <img src="~/img/bg/bg-02.png" class="position-absolute bottom-0 end-0" alt="...">
+            <div class="home_bubble">
+                <div class="square-shape2"></div>
+                <div class="bubble b_three"></div>
+                <div class="square-shape1 d-none d-sm-block"></div>
+                <div class="bubble b_six d-none d-sm-block"></div>
+            </div>
+        </footer>
+
+    </div>
+  
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-R7ZSGK1K3J');
+    </script>
+
+
+    @*<div class="zalo-chat-widget" data-oaid="2578762412541453447" data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="0" data-width="300" data-height="300"> </div>
+
+        <script src="https://sp.zalo.me/plugins/sdk.js"></script>*@
+    <!-- start scroll to top -->
+    <a href="#!" class="scroll-to-top"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
+    <!-- end scroll to top -->
+    <!-- all js include start -->
+    <!-- jQuery -->
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/modal.js"></script>
+    <!-- popper js -->
+    <script src="~/js/popper.min.js"></script>
+    <script>
+    $(document).ready(function () {
+            $("#btnsubmit1").click(function (e) {
+                //Serialize the form datas.
+                var valdata = $("#formmethod1").serialize();
+                //to get alert popup
+                $.ajax({
+                    url: "/Customers/Index",
+                    type: "POST",
+                    dataType: 'json',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: valdata
+                });
+            });
+        });</script>
+    <!-- bootstrap -->
+    <script src="~/js/bootstrap.min.js"></script>
+
+    <!-- search -->
+    <script src="~/search/search.js"></script>
+
+    <!-- navigation -->
+    <script src="~/js/nav-menu.js"></script>
+
+    <!-- owl carousel -->
+    <script src="~/js/owl.carousel.js"></script>
+
+    <!-- jquery.counterup.min -->
+    <script src="~/js/jquery.counterup.min.js"></script>
+
+    <!-- stellar js -->
+    <script src="~/js/jquery.stellar.min.js"></script>
+
+    <!-- waypoints js -->
+    <script src="~/js/waypoints.min.js"></script>
+
+    <!-- countdown js -->
+    <script src="~/js/countdown.js"></script>
+
+    <!-- jquery.magnific-popup js -->
+    <script src="~/js/jquery.magnific-popup.min.js"></script>
+
+    <!-- lightgallery js -->
+    <script src="~/js/lightgallery-all.js"></script>
+
+    <!-- mousewheel js -->
+    <script src="~/js/jquery.mousewheel.min.js"></script>
+
+    <!-- wow js -->
+    <script src="~/js/wow.js"></script>
+
+    <!-- custom scripts -->
+    <script src="~/js/main.js"></script>
+
+    <!-- form plugins js -->
+    <script src="~/quform/js/plugins.js"></script>
+
+    <!-- form scripts js -->
+    <script src="~/quform/js/scripts.js"></script>
+
+    <!-- all js include end -->
+    <!--Start of Tawk.to Script-->
+    <!--End of Tawk.to Script-->
+</body>
+
+</html>
